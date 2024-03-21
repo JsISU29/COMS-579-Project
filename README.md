@@ -22,6 +22,8 @@ Gradio Interface: Provides an easy-to-use web interface for users to interact wi
 # Prerequisites
 
 Python 3.10 or higher
+An OpenAI API key in your System Evironment for accessing OpenAI's embeddings
+A Pinecone API key in your System Evironment for indexing and querying vectors
 
 Docker (optional, for containerized deployment)
 
