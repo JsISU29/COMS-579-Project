@@ -3,11 +3,11 @@
 
 # Team Members:
 
-Shuairan Chen
+* Shuairan Chen
 
-Fan Zhou
+* Fan Zhou
 
-Jian Sun
+* Jian Sun
 
 # Retrieval-augmented generation (RAG) is a framework to give generative models knowledge without finetuning themselves. In this way, an LLM can adapt to new tasks quickly with the presence of new documents.
 
@@ -31,15 +31,15 @@ Docker (optional, for containerized deployment)
 
 1. Clone the repository:
 
-### 'git clone https://github.com/JsISU29/COMS-579-Project'
+`git clone https://github.com/JsISU29/COMS-579-Project.git`
 
 2. Navigate to the project directory:
 
-cd projectname
+`cd COMS-579-Project`
 
 3. Install the required Python packages:
 
-### 'pip install -r requirements.txt'
+`pip install -r requirements.txt`
 
 # Acknowledgments
 
