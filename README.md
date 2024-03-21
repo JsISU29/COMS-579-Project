@@ -9,7 +9,9 @@
 
 * Jian Sun
 
-# Retrieval-augmented generation (RAG) is a framework to give generative models knowledge without finetuning themselves. In this way, an LLM can adapt to new tasks quickly with the presence of new documents.
+# Retrieval-augmented generation (RAG) 
+
+Retrieval-augmented generation (RAG) is a framework to give generative models knowledge without finetuning themselves. In this way, an LLM can adapt to new tasks quickly with the presence of new documents.
 
 # Features
 
@@ -52,6 +54,10 @@ Docker (optional, for containerized deployment)
 `or use an IDE such as PyCharm to run the preprocess_pdf.py file`
 
 2. Then need you to enter your pdf file path to save the pdf content into PineCone DB
+
+# Demo Video
+
+You could find the demo video in the repo which named "COMS579ProjectFirstDemo.mp4"
 
 # Acknowledgments
 
