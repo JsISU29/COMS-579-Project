@@ -29,8 +29,6 @@ An OpenAI API key in your System Evironment for accessing OpenAI's embeddings
 
 A Pinecone API key in your System Evironment for indexing and querying vectors
 
-Docker (optional, for containerized deployment)
-
 # Installation
 
 1. Clone the repository:
@@ -51,7 +49,7 @@ Docker (optional, for containerized deployment)
 
 `python preprocess_pdf.py`
 
-`or use an IDE such as PyCharm to run the preprocess_pdf.py file`
+or use an IDE such as PyCharm to run the preprocess_pdf.py file
 
 2. Then need you to enter your pdf file path to save the pdf content into PineCone DB
 
