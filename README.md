@@ -2,8 +2,11 @@
 579 final project
 
 Team Members:
+
 Shuairan Chen
+
 Fan Zhou
+
 Jian Sun
 
 Retrieval-augmented generation (RAG) is a framework to give generative models knowledge without finetuning themselves. In this way, an LLM can adapt to new tasks quickly with the presence of new documents.
@@ -19,20 +22,27 @@ Gradio Interface: Provides an easy-to-use web interface for users to interact wi
 Prerequisites
 
 Python 3.6 or higher
+
 Docker (optional, for containerized deployment)
 
 Installation
 
 Clone the repository:
+
 git clone https://github.com/JsISU29/COMS-579-Project
 
 Navigate to the project directory:
+
 cd projectname
 
 Install the required Python packages:
+
 pip install -r requirements.txt
 
 Acknowledgments
+
 The creators of Langchain for their innovative approach to language processing.
+
 Pinecone team for providing an efficient vector database solution.
+
 Gradio for making it easy to create web interfaces for machine learning models.
