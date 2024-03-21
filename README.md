@@ -24,7 +24,7 @@ Docker (optional, for containerized deployment)
 Installation
 
 Clone the repository:
-git clone https://github.com/yourusername/projectname.git
+git clone https://github.com/JsISU29/COMS-579-Project
 
 Navigate to the project directory:
 cd projectname
