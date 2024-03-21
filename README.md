@@ -43,6 +43,16 @@ Docker (optional, for containerized deployment)
 
 `pip install -r requirements.txt`
 
+# Usage
+
+1. To run the project for now, please execute the main script:
+
+`python preprocess_pdf.py
+
+`or use an IDE such as PyCharm to run the preprocess_pdf.py file
+
+2. Then need you to enter your pdf file path to save the pdf content into PineCone DB
+
 # Acknowledgments
 
 The creators of Langchain for their innovative approach to language processing.
