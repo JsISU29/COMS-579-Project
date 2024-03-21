@@ -21,7 +21,7 @@ Gradio Interface: Provides an easy-to-use web interface for users to interact wi
 
 # Prerequisites
 
-Python 3.6 or higher
+Python 3.10 or higher
 
 Docker (optional, for containerized deployment)
 
