@@ -25,10 +25,10 @@ Gradio Interface: Provides an easy-to-use web interface for users to interact wi
 
 Python 3.10 or higher
 
-An OpenAI API key in your System Evironment for accessing OpenAI's embeddings
+An OpenAI API key in your System Evironment for accessing OpenAI's embeddings.
 You could set up your OpenAI API key in system enviroment by: https://platform.openai.com/docs/quickstart?context=python
 
-A Pinecone API key in your System Evironment for indexing and querying vectors
+A Pinecone API key in your System Evironment for indexing and querying vectors.
 You could set up your Pinecone API key in system enviroment by: https://docs.pinecone.io/guides/getting-started/authentication
 
 # Installation
