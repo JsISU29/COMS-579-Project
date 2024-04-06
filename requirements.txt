@@ -7,3 +7,4 @@ langchain==0.1.12
 langchain-core==0.1.32
 langchain-community==0.0.28
 langchain-text-splitters==0.0.1
+pypdf==4.1.0
