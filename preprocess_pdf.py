@@ -8,7 +8,7 @@ import tiktoken
 # import openai
 # from langchain.llms import OpenAI
 # from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
@@ -41,9 +41,9 @@ spec = ServerlessSpec(cloud="GCP", region="us-central1")
 
 
 def read_pdf_clean_and_save_text(pdf_path):
-    txt_path = pdf_path.replace(".pdf", ".txt")
-    print(pdf_path)
-    print(txt_path)
+    # txt_path = pdf_path.replace(".pdf", ".txt")
+    # print(pdf_path)
+    # print(txt_path)
 
     doc = fitz.open(pdf_path)
     text = ""
@@ -59,8 +59,8 @@ def read_pdf_clean_and_save_text(pdf_path):
 
     # os.remove(pdf_path)
 
-    with open(txt_path, 'w', encoding='utf-8') as f:
-        f.write(text)
+    # with open(txt_path, 'w', encoding='utf-8') as f:
+    #     f.write(text)
     return text
 
 
@@ -72,6 +72,12 @@ def delete_generated_files(pdf_path):
 def text_loader(file_path):
     txt_path = file_path.replace(".pdf", ".txt")
     loader = TextLoader(txt_path)
+    data = loader.load()
+    return loader, data
+
+
+def pdf_loader(file_path):
+    loader = PyPDFLoader(file_path)
     data = loader.load()
     return loader, data
 
@@ -101,8 +107,6 @@ def create_indexing(data, index):
     for i, document in enumerate(tqdm(data)):
         metadata = document.metadata
         record_texts = text_splitter.split_text(document.page_content)
-        print(record_texts)
-        print(record_texts[0])
         record_metadata = [{"chunk": j, "text": text, **metadata} for j, text in enumerate(record_texts)]
         texts.extend(record_texts)
         meta_datas.extend(record_metadata)
@@ -176,8 +180,9 @@ def command_running():
         # print("Please input the question")
         # question = str(input())
 
-        read_pdf_clean_and_save_text(pdf_path)
-        loader, data = text_loader(pdf_path)
+        # read_pdf_clean_and_save_text(pdf_path)
+        # loader, data = text_loader(pdf_path)
+        loader, data = pdf_loader(pdf_path)
         # create_index(loader)
         # get_all_splits(data)
         ids = vectors_store(data)
