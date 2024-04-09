@@ -5,17 +5,17 @@ import os
 import sys
 import spacy
 import tiktoken
-# import openai
-# from langchain.llms import OpenAI
-# from langchain_community.document_loaders import PyPDFLoader
+import openai
+from langchain.llms import OpenAI
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
-# from langchain.chains import RetrievalQA
-# from langchain.chat_models import ChatOpenAI
-# from langchain.memory import ConversationBufferMemory
-# from langchain.chains import ConversationalRetrievalChain
+from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
+from langchain.vectorstores import Pinecone as PC
 from pinecone import Pinecone
 from pinecone import ServerlessSpec
 import time
@@ -25,17 +25,16 @@ import tempfile
 from tqdm.auto import tqdm
 from uuid import uuid4
 
-
 tiktoken.encoding_for_model('gpt-3.5-turbo')
 tokenizer = tiktoken.get_encoding('cl100k_base')
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 pinecone_api_key = os.getenv("PINECONE_API_KEY")
-
+index_name = "coms579pdfqa"
 model_name = "text-embedding-ada-002"
 embedder = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
-# llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature=0.5, max_tokens=100, top_p=5,
-#                  frequency_penalty=0.0, presence_penalty=0.0)
+llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature=0.5, max_tokens=1000, top_p=0.9,
+                 frequency_penalty=0.0, presence_penalty=0.0)
 pc = Pinecone(api_key=pinecone_api_key)
 spec = ServerlessSpec(cloud="GCP", region="us-central1")
 
@@ -145,112 +144,42 @@ def vectors_store(data):
     return index
 
 
-def get_vectors_from_pinecone(all_splits):
-    index = pc.Index(name="pdf_qa_index")
-    # ids = [str(hash(text)) for text in all_splits]
-    # response = index.fetch(ids)
-    # vectorstore = {k: v["values"] for k, v in response.items()}
-    vectorstore = Pinecone(index, embedder.embed_query, all_splits)
-    return vectorstore
-
-
-# def create_chat_model(vectorstore):
-#     retriever = vectorstore.as_retriever()
-#     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True, max_length=1000)
-#     chat = ConversationalRetrievalChain.from_llm(llm, retriever=retriever, memory=memory)
-#     return chat
-
-
-def get_answer_from_chat_model(chat, question):
-    dic = {"question": question}
-    response = chat(dic)
-    answer = response["answer"]
-    return answer
+def upload_index_pdf_to_pinecone(file_path):
+    if not os.path.exists(file_path):
+        return "The file does not exist"
+    loader, data = pdf_loader(file_path)
+    vectors_store(data)
+    return "Upload index to Pinecone success"
 
 
 def command_running():
     while True:
         print("Please input the path of the pdf file")
         pdf_path = input()
-        # pdf_path = r"D:\Iowa State University\2024 Spring\COM S 672\Reviews\2.pdf"
+
         if not os.path.exists(pdf_path):
             print("The file does not exist")
             continue
 
-        # print("Please input the question")
-        # question = str(input())
-
-        # read_pdf_clean_and_save_text(pdf_path)
-        # loader, data = text_loader(pdf_path)
         loader, data = pdf_loader(pdf_path)
-        # create_index(loader)
-        # get_all_splits(data)
         ids = vectors_store(data)
-        # chat = create_chat_model(ids)
-        # answer = get_answer_from_chat_model(chat, question)
-        # print(answer)
+        print("Upload index to Pinecone success")
 
-        print("Do you want to ask another question? (y/n)")
+        print("Do you want to upload another pdf file? (y/n)")
         response = input()
         if response == "n":
             break
         else:
             continue
-    # delete_generated_files(pdf_path)
 
-
-# gradio_input_list = [
-#     gr.File(label="Upload your PDF file", type="file"),
-#     gr.Textbox(label="Your Question")
-# ]
-#
-# gradio_output_list = [
-#     gr.Textbox(label="ChatModel Answer")
-# ]
-
-
-# def process_pdf_and_question(pdf_file, question):
-#     temp_pdf_path = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf").name
-#     with open(temp_pdf_path, 'wb') as temp_file:
-#         temp_file.write(pdf_file)
-#     txt_path = temp_pdf_path.replace(".pdf", ".txt")
-#
-#     text = read_pdf_clean_and_save_text(temp_pdf_path)
-#     loader, data = text_loader(txt_path)
-#     create_index(loader)
-#     all_splits = get_all_splits(data)
-#     ids = vectors_store(all_splits)
-#     chat = create_chat_model(ids)
-#     answer = get_answer_from_chat_model(chat, question)
-#
-#     os.remove(temp_pdf_path)
-#
-#     return answer
-
-
-# def main():
-#     with gr.Blocks() as demo:
-#         gr.Markdown("## PDF ChatModel")
-#         gr.Markdown("Upload a PDF file and ask a question about its content.")
-#
-#         with gr.Row():
-#             pdf_input = gr.File(label="Upload your PDF file", type="bytes")
-#             question_input = gr.Textbox(label="Your Question")
-#             submit_button = gr.Button("Submit")
-#
-#         answer_output = gr.Textbox(label="ChatModel Answer")
-#
-#         submit_button.click(
-#             fn=process_pdf_and_question,
-#             inputs=[pdf_input, question_input],
-#             outputs=answer_output
-#         )
-#
-#     demo.launch()
+    print("Upload PDF files finished.")
 
 
 if __name__ == "__main__":
     command_running()
+
+
+
 
 
 
