@@ -69,9 +69,9 @@ or use an IDE such as PyCharm to run the user_query.py file
 
 # Demo Video
 
-You could find the demo video about Upload and Indexing PDF in the repo which named "COMS579ProjectFirstDemo.mp4"
+You could find the demo video about Upload and Indexing PDF in the repo which named "COMS579ProjectFirstDemo.mp4", this video need HEVC, if your player not support the video, you could use the "COMS579ProjectFirstDemo-Fix-NoNeedHEVC.mp4" to watch the demo video.
 
-You could find the demo video about Answer User Queries in the repo which named "COMS579ProjectSecondDemo.mp4"
+You could find the demo video about Answer User Queries in the repo which named "COMS579ProjectSecondDemo.mp4", this video need AV1, if your player not support the video, you could use the "COMS579ProjectSecondDemo-Fix-NoNeedAV1.mp4" to watch the demo video.
 
 # Acknowledgments
 
