@@ -47,6 +47,8 @@ You could set up your Pinecone API key in system enviroment by: https://docs.pin
 
 # Usage
 
+Project Milestone 1 - Upload and Indexing PDF
+
 1. To run the project for now, please execute the main script:
 
 `python preprocess_pdf.py`
@@ -55,9 +57,21 @@ or use an IDE such as PyCharm to run the preprocess_pdf.py file
 
 2. Then need you to enter your pdf file path to save the pdf content into PineCone DB
 
+Project Milestone 2 - Answer User Queries
+
+1. To run the project for now, please execute the main script:
+
+`python user_query.py`
+
+or use an IDE such as PyCharm to run the user_query.py file
+
+2. Then need you to enter your question to get the answer from the chat model
+
 # Demo Video
 
-You could find the demo video in the repo which named "COMS579ProjectFirstDemo.mp4"
+You could find the demo video about Upload and Indexing PDF in the repo which named "COMS579ProjectFirstDemo.mp4"
+
+You could find the demo video about Answer User Queries in the repo which named "COMS579ProjectSecondDemo.mp4"
 
 # Acknowledgments
 
