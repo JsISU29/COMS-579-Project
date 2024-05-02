@@ -41,9 +41,29 @@ You could set up your Pinecone API key in system enviroment by: https://docs.pin
 
 `cd COMS-579-Project`
 
-3. Install the required Python packages:
+3. For MacOS need Xcode Tool to compile some python library, run the following command in terminal, then follow the window which shows after you run the command to install Xcode:
+`xcode-select --install`
 
+4. Install the required Python packages:
+`pip install --upgrade pip`
 `pip install -r requirements.txt`
+If still show no some modules, please try the following commands:
+`pip install --upgrade PyMuPDF`
+`pip install --upgrade tiktoken`
+`pip install --upgrade pinecone-client`
+`pip install --upgrade tqdm`
+`pip install --upgrade uuid`
+`pip install --upgrade langchain`
+`pip install --upgrade langchain-core`
+`pip install --upgrade langchain_community`
+`pip install --upgrade langchain_openai`
+`pip install --upgrade langchain-text-splitters`
+`pip install --upgrade langchain_pinecone`
+`pip install --upgrade pypdf`
+`pip install --upgrade gradio`
+`pip install --upgrade gradio_client`
+`pip install --upgrade numpy`
+`pip install --upgrade fitz`
 
 # Usage
 
