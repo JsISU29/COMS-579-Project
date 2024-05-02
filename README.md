@@ -46,23 +46,41 @@ You could set up your Pinecone API key in system enviroment by: https://docs.pin
 
 4. Install the required Python packages:
 `pip install --upgrade pip`
+
 `pip install -r requirements.txt`
+
 If still show no some modules, please try the following commands:
+
 `pip install --upgrade PyMuPDF`
+
 `pip install --upgrade tiktoken`
+
 `pip install --upgrade pinecone-client`
+
 `pip install --upgrade tqdm`
+
 `pip install --upgrade uuid`
+
 `pip install --upgrade langchain`
+
 `pip install --upgrade langchain-core`
+
 `pip install --upgrade langchain_community`
+
 `pip install --upgrade langchain_openai`
+
 `pip install --upgrade langchain-text-splitters`
+
 `pip install --upgrade langchain_pinecone`
+
 `pip install --upgrade pypdf`
+
 `pip install --upgrade gradio`
+
 `pip install --upgrade gradio_client`
+
 `pip install --upgrade numpy`
+
 `pip install --upgrade fitz`
 
 # Usage
