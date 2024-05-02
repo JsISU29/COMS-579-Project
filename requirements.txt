@@ -4,9 +4,9 @@ pinecone-client==3.2.2
 tqdm==4.66.2
 uuid==1.30
 langchain==0.1.14
-langchain-core==0.1.41
+langchain-core==0.1.46
 langchain-community==0.0.31
-langchain-openai==0.1.41
+langchain-openai==0.1.4
 langchain-text-splitters==0.0.1
 pypdf==4.1.0
 gradio==4.25.0
