@@ -5,7 +5,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
-from pinecone import ServerlessSpec
+from pinecone import ServerlessSpec, PodSpec
 import numpy as np
 
 tiktoken.encoding_for_model('gpt-3.5-turbo')
@@ -17,7 +17,8 @@ index_name = "coms579pdfqa"
 model_name = "text-embedding-ada-002"
 embedder = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
 pc = Pinecone(api_key=pinecone_api_key)
-spec = ServerlessSpec(cloud="GCP", region="us-central1")
+# spec = ServerlessSpec(cloud="GCP", region="us-central1")
+spec = PodSpec(environment='gcp-starter', pod_type='Pods')
 
 
 def get_exists_index_from_pinecone(index_name):
