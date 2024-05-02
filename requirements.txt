@@ -8,6 +8,7 @@ langchain-core==0.1.46
 langchain-community==0.0.31
 langchain-openai==0.1.4
 langchain-text-splitters==0.0.1
+langchain-pinecone==0.1.0
 pypdf==4.1.0
 gradio==4.25.0
 gradio_client==0.15.0
