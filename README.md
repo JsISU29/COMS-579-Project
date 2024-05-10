@@ -113,17 +113,19 @@ Project Milestone 3 - The GUI App
 
 or or use an IDE such as PyCharm to run the gradio_gui.py file
 
-2. Click the "Unload PDF" tag to upload your pdf, you could drag your pdf file to the upload box
+2. Click the hyperlink, to open the Gradio GUI on the website
 
-3. Then click the bottom Upload PDF button to start upload pdf to PineCone DB, if upload success, the upload result box while show success
+3. Click the "Unload PDF" tag to upload your pdf, you could drag your pdf file to the upload box
 
-4. Click the "Chat with Model" tag to talk with the chat model
+4. Then click the bottom Upload PDF button to start upload pdf to PineCone DB, if upload success, the upload result box while show success
 
-5. You could change the top-k value by the Top K Slider, after changed the value you need to click the Update Top K button
+5. Click the "Chat with Model" tag to talk with the chat model
 
-6. Then you could input your query in the bottom text box, then press "Enter" or click the Submit button to send your query and get the answer
+6. You could change the top-k value by the Top K Slider, after changed the value you need to click the Update Top K button
 
-7. Then the query and the results while show in the Chatbot Box
+7. Then you could input your query in the bottom text box, then press "Enter" or click the Submit button to send your query and get the answer
+
+8. Then the query and the results while show in the Chatbot Box
 
 # Demo Video
 
