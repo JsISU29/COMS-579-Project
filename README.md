@@ -105,11 +105,33 @@ or use an IDE such as PyCharm to run the user_query.py file
 
 2. Then need you to enter your question to get the answer from the chat model
 
+Project Milestone 3 - The GUI App
+
+1. To run the project for now, please execute the main script:
+
+`python gradio_gui.py`
+
+or or use an IDE such as PyCharm to run the gradio_gui.py file
+
+2. Click the "Unload PDF" tag to upload your pdf, you could drag your pdf file to the upload box
+
+3. Then click the bottom Upload PDF button to start upload pdf to PineCone DB, if upload success, the upload result box while show success
+
+4. Click the "Chat with Model" tag to talk with the chat model
+
+5. You could change the top-k value by the Top K Slider, after changed the value you need to click the Update Top K button
+
+6. Then you could input your query in the bottom text box, then press "Enter" or click the Submit button to send your query and get the answer
+
+7. Then the query and the results while show in the Chatbot Box
+
 # Demo Video
 
 You could find the demo video about Upload and Indexing PDF in the repo which named "COMS579ProjectFirstDemo.mp4", this video need HEVC, if your player not support the video, you could use the "COMS579ProjectFirstDemo-Fix-NoNeedHEVC.mp4" to watch the demo video.
 
 You could find the demo video about Answer User Queries in the repo which named "COMS579ProjectSecondDemo.mp4", this video need AV1, if your player not support the video, you could use the "COMS579ProjectSecondDemo-Fix-NoNeedAV1.mp4" to watch the demo video.
+
+You could find the demo video about the Gradio GUI in the repo which named "COMS579ProjectThirdDemo.mp4"
 
 # Acknowledgments
 
